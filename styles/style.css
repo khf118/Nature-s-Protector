@@ -373,8 +373,70 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+/*=============================================================================*/
+
+@-webkit-keyframes up
+{
+  0%,40%
+  {
+    bottom: -150px;
+  }
+  100% 
+  {
+    bottom: 0px;
+  }
+}
 
 
+@-webkit-keyframes down 
+{
+  0%,70%
+  {
+    bottom: 0px;
+  }
+  100% 
+  {
+    bottom: -250px;
+  }
+}
+
+@-webkit-keyframes smokemove 
+{
+  0%
+  {
+    background-position: 0px 120px; 
+  }
+  100%
+  {
+    background-position: 0px 0px; 
+  }
+}
+
+
+
+@-webkit-keyframes sunshine
+{
+  0%,30%
+  {
+    background:#aeaa98 url(".././images/bg.png") repeat-x bottom;
+  }
+  100% 
+  {
+    background:#DFFBFD url(".././images/bg.png") repeat-x bottom;/*#DFFBFD,#AAE9EC*/
+  }
+}
+
+@-webkit-keyframes show
+{
+  0%,70%
+  {
+    opacity: 0;
+  }
+  100% 
+  {
+    opacity: 1;
+  }
+}
 
 
 /*=============================================================================*/
@@ -392,8 +454,9 @@ header
   
   height: 270px;
   
-  background: url(".././images/bg.png") repeat-x bottom , -webkit-linear-gradient(top,#DFFBFD,#AAE9EC) ;
-  background: url(".././images/bg.png") repeat-x bottom ,-moz-linear-gradient(top,#DFFBFD,#AAE9EC);
+  background:#dffbfd url(".././images/bg.png") repeat-x bottom ;
+
+  -webkit-animation:sunshine 6s ease-out 0s;
 }
 
 #container
@@ -446,6 +509,8 @@ header nav ul li
   
   -webkit-transform:skew(-10deg,0);
   -moz-transform:skew(-10deg,0);
+
+  -webkit-transition:background 0.8s ease-out 0s;
 }
 
 
@@ -466,6 +531,25 @@ header nav ul li a:link , header nav ul li a:visited , header nav ul li a:hover 
   text-decoration: none;
 }
 
+#animation1
+{
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  animation:up 6s ease-out 0s;
+  -webkit-animation:up 6s ease-out 0s;
+}
+
+#animation2
+{
+  position: absolute;
+  width: 100%;
+  height: 270px;
+  bottom: -250px;
+
+  animation:down 3s ease-out 0s;
+  -webkit-animation:down 3s ease-out 0s;
+}
 
 #slogan
 {
@@ -479,6 +563,9 @@ header nav ul li a:link , header nav ul li a:visited , header nav ul li a:hover 
   font-family: "Lucida Calligraphy";
   font-size: 30px;
   text-align: center;
+
+  opacity: 1;
+  -webkit-animation:show 9s ease-out 0s;
 }
 
 #arc
@@ -526,11 +613,9 @@ header nav ul li a:link , header nav ul li a:visited , header nav ul li a:hover 
   box-shadow: -3px 1px 0px 1px #64894d;
 }
 
-.bottom 
+.bottom,.stem1,.stem2 ,.stem3
 {
   position: absolute;
-  top: 60px;
-  left: 43px;
   
   height: 70px;
   width: 6px;
@@ -542,6 +627,48 @@ header nav ul li a:link , header nav ul li a:visited , header nav ul li a:hover 
   -moz-transform:perspective(100px) rotateX(35deg);
   
   box-shadow: -2px 1px 0px 1px #5d4628;
+}
+
+.bottom
+{
+  top: 60px;
+  left: 43px;
+}
+
+.stem1
+{
+  bottom: 40px;
+  right: 25%;
+  
+  height: 30px;
+  width: 5px;
+
+  -webkit-transform:rotate(6deg);
+  -moz-transform:rotate(6deg);
+}
+
+.stem2
+{
+  bottom: 40px;
+  right: 27%;
+  
+  height: 26px;
+  width: 4px;
+
+  -webkit-transform:rotate(4deg);
+  -moz-transform:rotate(4deg);
+}
+
+.stem3
+{
+  bottom: 30px;
+  right: 13%;
+  
+  height: 24px;
+  width: 4px;
+
+  -webkit-transform:rotate(4deg);
+  -moz-transform:rotate(4deg);
 }
 
 
@@ -632,10 +759,32 @@ header nav ul li a:link , header nav ul li a:visited , header nav ul li a:hover 
   -moz-transform:rotate(-4deg) scale(0.8,0.8) ;  
 }
 
-.tree2 .dot1,.tree2 .dot2
+.tree2 .dot1,.tree2 .dot2,.tree4 .dot1,.tree4 .dot2
 {
   background-color: #688b4f; 
 }
+
+
+.tree4
+{
+  position: absolute;
+  right: 15%;
+  bottom:15px;
+  
+  z-index: 0;
+  
+  transform:rotate(81deg);
+  -webkit-transform:rotate(81deg);
+  -moz-transform:rotate(81deg);
+
+}
+
+.tree4 .top
+{
+  background-color: #656432;
+  box-shadow: -3px 1px 0px 1px #44431a;
+}
+
 
 .flower,.flower2
 {
@@ -667,6 +816,58 @@ header nav ul li a:link , header nav ul li a:visited , header nav ul li a:hover 
   
   background: url(".././images/herb.png") no-repeat;
 }
+
+
+
+.factorycontainer1 , .factorycontainer2
+{
+  position: absolute;
+
+  width: 40px;
+  height: 100%;
+
+  background: url("../images/smoke.png") no-repeat;  
+
+  animation:smokemove 3s linear 0s 1;
+  -webkit-animation:smokemove 3s linear 0s 1;
+}
+
+.factory1 , .factory2
+{
+  position: absolute;
+  bottom: 0px;
+
+  width: 40px;
+  height: 100px;
+  
+  background-color: #58483a;
+  
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  
+  box-shadow: -2px 1px 0px 0px #000000;
+  -webkit-transform:perspective(100) rotateX(7deg);
+  -moz-transform:perspective(100) rotateX(7deg);
+}
+
+.factorycontainer1
+{
+  left: 11%;
+  bottom: 30px;
+}
+
+.factorycontainer2
+{
+  left: 15%;
+  bottom:20px;
+}
+
+.factory2
+{
+  -webkit-transform:scale(0.75,0.75);
+}
+
+
 /*==========================================================================*/
 
 
