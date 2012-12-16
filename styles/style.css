@@ -452,6 +452,8 @@ header
   margin: 0;
   padding: 0;
   
+  overflow: hidden;;
+
   height: 270px;
   
   background:#dffbfd url(".././images/bg.png") repeat-x bottom ;
@@ -472,12 +474,12 @@ header
   padding:5px 0 0 0;
 }
 
-#logo img 
- {
+#logo img
+{
   margin:0 10px 0 0;
   
   float: left;
- }
+}
 
 #logo #name
 {
@@ -573,6 +575,8 @@ header nav ul li a:link , header nav ul li a:visited , header nav ul li a:hover 
   position: relative;
   top:85px;
   height: 300px;
+
+  z-index: 1;
   
   background-color: #ffffff;
   
@@ -875,6 +879,8 @@ section
 {
   position: relative;
   min-height: 400px;
+
+  padding-top: 30px;
   
   background:-webkit-linear-gradient(top,#ffffff,#eeeeee);
   background:-moz-linear-gradient(top,#ffffff,#eeeeee);
@@ -884,7 +890,7 @@ section
 
 section h1
 {
-  margin: 30px 0 5px 0;
+  margin-bottom: 5px;
   padding: 0;
   
   font:35px "helvetica neue";
@@ -971,7 +977,8 @@ section #reportbutton li:last-child
 footer
 {
   position: relative;
-  
+  margin: 0 auto;
+  width: 960px;
   background-color:#eee;
   text-align: center; 
 }
@@ -1001,4 +1008,116 @@ footer nav ul li a:link,footer ul li a:visited,footer ul li a:hover,footer ul li
 footer nav ul li a:hover,footer ul li a:active
 {
   color:#000000;
+}
+/*
+  Session 3
+*/
+
+/*
+* Style the reveal button
+*/
+#maps-modal-reveal
+{
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+
+  padding: 5px;
+  height: 20px;
+  width: 20px;
+
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+  line-height: 18px;
+
+  background-color:#ee2143;
+  
+  cursor: pointer;
+  z-index: 2;
+
+  border-radius: 50%;
+}
+
+#maps-modal-reveal:after {
+  content: "!";
+}
+
+/*
+* Style the reveal button (the clicked version)
+*/
+.revealed #maps-modal-reveal {
+  opacity: 0.3;
+}
+
+.revealed #maps-modal-reveal:after {
+  content: "x";
+}
+
+/*
+* Style the reveal button (the hovered version)
+*/
+#maps-modal-reveal:hover
+{  
+  background-color:#ff0000;
+}
+
+/*
+* Style the reveal button (the active version)
+*/
+#maps-modal-reveal:active
+{  
+  background-color:#666;
+}
+
+/*
+* Style the box of the modal
+*/
+#maps-modal-box
+{
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  
+  width: 100%;
+  height: 0%;
+
+  z-index: 1;
+  background-color: rgba(0,0,0,0.9);
+  
+  transition:height 0.3s ease-out;
+  -webkit-transition:height 0.3s ease-out;
+  -moz-transition:height 0.3s ease-out;
+  -o-transition:height 0.3s ease-out;
+  -ms-transition:height 0.3s ease-out;
+}
+
+/*
+* Style the revealed version of the box (shadow and height modifications)
+*/
+.revealed #maps-modal-box {
+  -moz-box-shadow: 0 0 50px 100px #000;
+  -webkit-box-shadow: 0 0 50px 100px #000;
+  -ms-transition:height 0.3s ease-out;
+  -o-transition:height 0.3s ease-out;
+  box-shadow: 0 0 50px 100px #000;
+
+  height: 100%;
+}
+
+/*#center
+{
+  float: left;
+  height: 35%
+}*/
+
+/*
+* Style the map canvas
+*/
+#map_canvas
+{
+  clear: both;
+  margin: 15% auto;
+  width: 960px;
+  height: 400px;
 }

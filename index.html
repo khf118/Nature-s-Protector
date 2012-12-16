@@ -4,13 +4,13 @@
 		<meta charset="UTF-8">
 		<title>Nature's Protector</title>
 		<meta name="description" content="">
-		<link rel="stylesheet" type="text/css" href="./styles/style.css">
+		<link rel="stylesheet" type="text/css" href="styles/style.css">
 	</head>
 	<body>
 		<header>
 			<div id="container">
 				<div id="logo">
-					<img src="./images/logo.png">
+					<a href="index.html"><img src="./images/logo.png"></a>
 					<div id="name">Nature's Protector</div>
 				</div>
 				<nav>
@@ -97,7 +97,6 @@
 					<li><a href="fbreport.html">Facebook</a></li>
 					<li><a href="twitterreport.html">Twitter</a></li>
 				</ul>
-
 		</section>
 		<footer>
 			<nav>
@@ -109,6 +108,25 @@
 					<li><a href="home.html">Contact</a></li>
 				</ul>
 			</nav>
+			<div>
+			<div id="maps-modal-container">
+				<div id="maps-modal-box">
+					<!--<div id="center"></div>-->
+					<div id="map_canvas"></div>
+				</div>
+				<div id="maps-modal-reveal"></div>
+			</div>
 		</footer>
+
+		<script type="text/javascript"src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+		<script type="text/javascript">
+		window.jQuery ||
+		document.write('<script type="text/javascript" src="scripts/jquery-1.8.3.min.js"><\/script>')
+		</script>
+		
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+		<script src="scripts/script.js"></script>
+
 	</body>
 </html>
